@@ -18,6 +18,7 @@ main{
     width: 300px;
     background: #fff;
     border: 1px solid #ccc;
+    border-radius: 3%;
 }
 
 #progress-wrapper{
@@ -31,20 +32,22 @@ main{
     width: 0%;
     height: 10px;
 }
-.cover{
-    height: 200px;
-    background: #000;
-}
 .tema{
     width: 100%;
     text-align: center;
     font-size: 24px;
     font-weight: 600;
 }
-.cover img{
+.cover{
     width: 100%;
     height: 200px;
+}
+.cover img{
+    width: 90%;
+    height: 200px;
     object-fit: cover;
+    border-radius: 12%;
+    padding: 15px;
 }
 nav{
     text-align: center;
@@ -80,11 +83,11 @@ nav button:active{
 }
 .description h1{
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 400;
 }
-.description h2{
-    font-size: 20px;
-    font-weight: 500;
+.description h3{
+    font-size: 12;
+    font-weight: 300;
 }
 
 footer{
