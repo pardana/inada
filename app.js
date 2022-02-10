@@ -2,29 +2,38 @@ const audio = document.querySelector('audio')
 const playButton = document.querySelector('#play-button')
 const progressBar = document.getElementById('progress')
 const durasiLagu = document.querySelector('.durasi')
+const durasiLaguGerak = document.querySelector('.durasi-gerak')
 let isSongPlaying = false
 
 audio.onplaying = event => {
-    console.log('onplaying')
+    console.log('onPlaying')
     isSongPlaying = true
     playButton.innerHTML = 'Pause'
 }
 
 audio.onpause = event => {
-    console.log('onpause')
+    console.log('onPause')
     isSongPlaying = false
     playButton.innerHTML = 'Play'
 }
 
 audio.ontimeupdate = event => {
-    console.log('ontimeupdate')
     const { currentTime, duration } = event.srcElement;
     const percent = (currentTime / duration) * 100
     const minutes = Math.floor(duration/60)
     const seconds = Math.floor(duration- (minutes*60))
-    console.log('percent', percent)
     progressBar.style.width = `${percent}%`
     durasiLagu.innerHTML = `${minutes}:${seconds}`
+
+    const menitGerak = Math.floor(currentTime/60)
+    const detikGerak = Math.floor(currentTime - (menitGerak * 60))
+
+    let addZero = detikGerak;
+    if(addZero < 10){
+        addZero = `0${detikGerak}`
+    }
+    
+    durasiLaguGerak.innerHTML = `${menitGerak}:${addZero}`
 }
 
 playButton.addEventListener('click', () => {
