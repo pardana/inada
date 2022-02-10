@@ -1,4 +1,3 @@
-console.log("Music")
 const audio = document.querySelector('audio')
 const playButton = document.querySelector('#play-button')
 let isSongPlaying = false
