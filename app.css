@@ -18,7 +18,7 @@ main{
     width: 300px;
     background: #fff;
     border: 1px solid #ccc;
-    border-radius: 3%;
+    border-radius: 4%;
 }
 
 #progress-wrapper{
@@ -32,11 +32,18 @@ main{
     width: 0%;
     height: 10px;
 }
+#play-button{
+    background: salmon;
+}
+#play-button:hover{
+    background: rgb(240, 64, 64)
+}
 .tema{
     width: 100%;
     text-align: center;
     font-size: 24px;
     font-weight: 600;
+    margin-top: 8px;
 }
 .cover{
     width: 100%;
@@ -59,23 +66,17 @@ nav button{
 }
 nav button:hover{
     border-bottom-width: 3px;
-    background: salmon;
+    background-color: salmon;
 }
 nav button:active{
     padding-top: 2px;
     border-bottom-width: 3px;
-    background: salmon;
+    background-color: salmon;
 }
-#play-button{
-    background: salmon;
-}
-#play-button:hover{
-    background: rgb(240, 64, 64)
-}
-.durasi-music{
+.durasi-musik{
     display: flex;
 }
-.durasi-music .durasi-gerak{
+.durasi-musik .durasi-gerak{
     margin-left: auto;
 }
 .description{
@@ -83,13 +84,12 @@ nav button:active{
 }
 .description h1{
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 100;
 }
-.description h3{
-    font-size: 12;
-    font-weight: 300;
+.description h2{
+    font-size: 20px;
+    font-weight: 500;
 }
-
 footer{
     text-align: center;
     margin-bottom: 10px;
