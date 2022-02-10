@@ -1,9 +1,27 @@
 const audio = document.querySelector('audio')
 const playButton = document.querySelector('#play-button')
+const prevButton = document.querySelector('#prev-button')
+const nextButton = document.querySelector('#next-button')
 const progressBar = document.getElementById('progress')
 const durasiLagu = document.querySelector('.durasi')
 const durasiLaguGerak = document.querySelector('.durasi-gerak')
 let isSongPlaying = false
+let songPosition = 0
+
+const playList = [
+    {
+        title: 'Red Velvet Psycho',
+        vocal: 'Red Velvet',
+        song: 'red_velvet_psycho',
+        cover: 'red_velvet_psycho'
+    },
+    {
+        title: 'Sapu Jagat',
+        vocal: 'Sabyan',
+        song: 'sabyan_sapu_jagat',
+        cover: 'sabyan_sapu_jagat'
+    }
+]
 
 audio.onplaying = event => {
     console.log('onPlaying')
@@ -39,9 +57,34 @@ audio.ontimeupdate = event => {
 playButton.addEventListener('click', () => {
     console.log('playButton clicked')
     if(isSongPlaying){
-        audio.pause()
+        audioPause()
         return
     }
      
-    audio.play()
+    audioPlay()
 })
+
+prevButton.addEventListener('click', () => {
+    console.log('prevButton')
+})
+
+nextButton.addEventListener('click', () => {
+    songPosition++
+    console.log('next song', playList[songPosition] ?? playList[0])
+    console.log('nextButton', songPosition)
+    loadMusic(playList[songPosition] ?? playList[0])
+    audioPlay()
+})
+
+const audioPlay = () => {
+    audio.play()
+}
+
+const audioPause = () => {
+    audio.pause()
+}
+
+const loadMusic = (data) => {
+    console.log('loadMusic', data)
+    audio.src = `lagu/${data.song}.mp3`
+}
