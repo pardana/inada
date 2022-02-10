@@ -76,6 +76,14 @@ nextButton.addEventListener('click', () => {
     audioPlay()
 })
 
+prevButton.addEventListener('click', () => {
+    songPosition--
+    console.log('next song', playList[songPosition] ?? playList[0])
+    console.log('nextButton', songPosition)
+    loadMusic(playList[songPosition] ?? playList[0])
+    audioPlay()
+})
+
 const audioPlay = () => {
     audio.play()
 }
