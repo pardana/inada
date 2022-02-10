@@ -35,6 +35,12 @@ main{
     height: 200px;
     background: #000;
 }
+.tema{
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
 .cover img{
     width: 100%;
     height: 200px;
@@ -57,6 +63,12 @@ nav button:active{
     border-bottom-width: 3px;
     background: salmon;
 }
+#play-button{
+    background: salmon;
+}
+#play-button:hover{
+    background: rgb(240, 64, 64)
+}
 .durasi-music{
     display: flex;
 }
@@ -73,4 +85,9 @@ nav button:active{
 .description h2{
     font-size: 20px;
     font-weight: 500;
+}
+
+footer{
+    text-align: center;
+    margin-bottom: 10px;
 }
