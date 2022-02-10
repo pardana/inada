@@ -25,3 +25,9 @@ main{
     border: 1px solid #000;
     height: 10px;
 }
+
+#progress-wrapper #progress{
+    background: salmon;
+    width: 0%;
+    height: 10px;
+}
